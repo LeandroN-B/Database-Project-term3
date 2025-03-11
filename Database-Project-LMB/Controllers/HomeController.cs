@@ -4,8 +4,6 @@ using Microsoft.AspNetCore.Mvc;
 
 
 
-// TESTING 13:16
-
 namespace Database_Project_LMB.Controllers
 {
     public class HomeController : Controller
