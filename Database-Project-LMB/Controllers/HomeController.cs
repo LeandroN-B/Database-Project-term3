@@ -8,9 +8,34 @@ namespace Database_Project_LMB.Controllers
     {
         private readonly ILogger<HomeController> _logger;
 
+
+        [HttpGet]
+        public IActionResult Login()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public string Login(string name, string password)
+        {
+            return $"Name {name} has been sent by {password}";
+        }
+
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
+        }
+
+        [HttpGet]
+        public IActionResult SendMessage()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public string SendMessage(string message, string name)
+        {
+            return $"Message {message} has been sent by {name}";
         }
 
         public IActionResult Index()
@@ -28,5 +53,12 @@ namespace Database_Project_LMB.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+        public string GetAllStudents()
+        {
+            return "Displaying all students";
+        }
+
+        
     }
 }
